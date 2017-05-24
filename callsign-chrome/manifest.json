@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+
+  "name": "QRZ Chrome",
+  "description": "This extension shows the lunar phase.",
+  "version": "0.0.1",
+  "icons": { "48": "icon.png" },
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "https://callook.info/"
+  ],
+  "content_security_policy": "script-src 'self' https://callook.info; object-src 'self'",
+  "content_scripts": [{
+    "js": ["jquery.js"],
+    "matches": ["https://callook.info/*"]
+  }],
+  "permissions": ["tabs"]
+}
